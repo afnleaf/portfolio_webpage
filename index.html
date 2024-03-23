@@ -5,32 +5,121 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>stezup</title>
+    <!--
+    body {
+        margin: 40px auto;
+        max-width: 650px;
+        line-height: 1;
+        font-size: 18px;
+        color: #444;
+        padding: 0 10px
+    }
+
+    h1,
+    h2,
+    h3 {
+        line-height: 1.2
+    }
+    -->
     <style type="text/css">
         body {
-            margin: 40px auto;
-            max-width: 650px;
-            line-height: 1.6;
-            font-size: 18px;
-            color: #444;
-            padding: 0 10px
+            margin: 5% auto; 
+            background: #f2f2f2; 
+            color: #444444; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            font-size: 16px; 
+            line-height: 1.8; 
+            text-shadow: 0 1px 0 #ffffff; 
+            max-width: 49%;
         }
-
-        h1,
-        h2,
-        h3 {
-            line-height: 1.2
+        code {
+            background: white;
+        }
+        a {
+            border-bottom: 1px solid #444444;
+            color: #444444;
+            text-decoration: none;
+        }
+        a:hover {
+            border-bottom: 0;
+        }
+        p {
+            line-height: 1.4;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Hi, my name is Stefan, this is <em>my </em> website.</h1>
+        <h1>Hi, my name is Stefan.</h1>
     </header>
+    <h2>I design and build tools for competitive gamers.</h2>
+    <h3>Here is a link to my <a href="resume.pdf">resume</a>, you can find me on <a href="https://github.com/afnleaf">github</a> or <a href="https://www.linkedin.com/in/stefan-zupancic-44a737291">linkedin</a>.</h3>
+    <p>I also coach Overwatch professionally. You can find me <a href="https://afnleaf.github.io/resume.html">here</a>.</p>
     <br>
-    <h2>Here is a link to my <strong><a href="resume.pdf">resume</a></strong>.</h2>
-    <h3>You can find me on <a href="https://github.com/afnleaf">github</a> or <a href="https://www.linkedin.com/in/stefan-zupancic-44a737291">linkedin</a>.</h3>
-    <p>I also coach Overwatch professionally. You can find my stuff <a href="https://afnleaf.github.io/resume.html">here</a>.</p>
+
+    <h1>Projects</h1>
+    <hr>
+    <br>
+    <h2><a href="https://github.com/afnleaf/PharahOBS/tree/main/replaycode-ocr">Replaycode-OCR</a></h2>
+    <p><strong><em>Docker, Python, OpenCV, Tesseract-OCR, DiscordAPI</em></strong></p>
+    <p>Discord bot for Overwatch replaycode extraction, image to text.</p>
+    <!-- -->
+    <ul>
+        <li>Developed a method to automatically parse specific alphanumeric characters out of a given image using OCR tools.</li>
+        <li>Used OpenCV to template match and pre-process images before getting results from Tesseract-OCR.</li>
+        <li>Created a test harness to track image processing improvements, achieving a 94% result accuracy.</li>
+        <li>Made a user input, results based logging system to monitor bot performance in real time and collect edge cases to be fixed.</li>
+        <li>Learned how to separate production and development environments using environment and other configuration files.</li>
+    </ul>
+    <!-- -->
+
+    <h2><a href="https://github.com/afnleaf/pokepastefix">Pokepastefix</a></h2>
+    <p><strong><em>Javascript</em></strong></p>
+    <p>A web extension that provides a simple fix to the core functionality of a pokemon team sharing tool used by thousands of people daily. The newest pokemon images continue to be missing from their server, this utility patches that issue up.</p>
+    <ul>
+        <li>Learned how to manipulate the DOM via content scripts.</li>
+        <li>Maintained software as new updates to the base game came out.</li>
+        <li>Distributed the software to dozens of users via the Chrome and Firefox extension stores.</li>
+    </ul>
+    
+
+    <h2><a href="https://github.com/afnleaf/pkautocalc">Pkautocalc</a></h2>
+    <p><strong><em>Docker, Bun, Javascript, Typescript, Elysia, CSS, HTML</em></strong></p>
+    <p>Web App for automated Pokemon damage calculation. A tool that seeks to streamline and improve a process done by thousands of competitive players.</p>
+    <ul>
+        <li>Built a webapp to automate and help with the teambuilding process for competitive Pokemon players.</li>
+        <li>Learned how to self host and deploy a fully containerized webapp from home using docker on my own server.</li>
+        <li>Built the front-end from pure HTML, CSS and Javascript.</li>
+        <li>Implemented server side rendering for results, returning HTML as POST response.</li>
+        <li>Interfaced with the <a href="https://github.com/smogon/damage-calc">@smogon/calc</a> API to make all the calculations based on user input.</li>
+    </ul>
+
+
+    <h2><a href="https://github.com/afnleaf/MNIST_NeuralNet">MNIST Single Digit Image Recognition</a></h2>
+    <p><strong><em>Python, Numpy, Matplotlib</em></strong></p>
+    <p>A simple neural network built from scratch.</p>
+    <!-- -->
+    <ul>
+        <li>Adjusted different hyperparameters (activation functions, layer size, layer number)</li>
+        <li>Used matplotlib to create graphs, plotting accuracy and mean squared error for each epoch.</li>
+    </ul>
+    <!-- -->
+
+
+    <h2><a href="https://github.com/afnleaf/AllenIversonChess">AI Chess</a></h2>
+    <p><strong><em>Python, Pygame, Numpy</em></strong></p>
+    <p>Chess game for human and AI players.</p>
+    <!-- -->
+    <ul>
+        <li>Built all components of a standard chess game for a human player.</li>
+        <li>Implemented Negamax with Alpha Beta Pruning for search tree.</li>
+        <li>Added Zobrist Hashing for Transposition Tables to reduce computational load.</li>
+    </ul>
+    <!-- -->
+
+
+
 </body>
 
 </html>

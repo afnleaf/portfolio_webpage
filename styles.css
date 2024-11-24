@@ -28,3 +28,28 @@ p {
 .portfolio h1,h2,h3 {
     line-height: 1;
 }
+
+/* test card */
+.card {
+    display: grid;
+}
+
+#card-title {
+    
+}
+
+#card-repo {
+
+}
+
+#card-tech {
+
+}
+
+#card-desc {
+
+}
+
+#card-list {
+
+}

@@ -15,15 +15,14 @@ code {
     background: white;
 }
 a {
-    border-bottom: 1px solid #444444;
     color: #444444;
     text-decoration: none;
 }
 a:hover {
-    border-bottom: 0;
+    /* border-bottom: 1px solid #444444; */
 }
 p {
-  line-height: 1.4;
+    line-height: 1.4;
 }
 .portfolio h1,h2,h3 {
     line-height: 1;
@@ -32,24 +31,115 @@ p {
 /* test card */
 .card {
     display: grid;
+    background: #fafafa;
+    border-radius: 1em;
+    margin: 1em auto;
+    padding: 1em;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin: 0;
+    padding: 0;
 }
 
 #card-title {
-    
+    margin 0;
+    padding 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 2;
+}
+
+#card-title a {
+    border-bottom: 1px solid #444444;
+}
+
+#card-title a:hover {
+    border-bottom: 0;
 }
 
 #card-repo {
+   display: grid;
+   align-items: center;
+   justify-content: center;
+}
+
+#image-link img {
+    display: flex;
+    align-items: center;
+    width: 1.8em;
+    height: 1.8em;
+}
+
+#image-link img:hover {
+    transform: scale(1.05);
+}
+
+
+#image-link a {
 
 }
 
 #card-tech {
+    display: flex;
+    gap: 0.4em;
+    margin: 0.2em;
+}
 
+#tech-item {
+    margin: 0;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    font-family: monospace;
+    letter-spacing: -0.5px;
+    font-size: 0.8rem;
+    background: #d5d5d5;
+    color: #666;
 }
 
 #card-desc {
-
+    line-height: 1.2;
+    margin: 0.5em;
 }
 
 #card-list {
 
+}
+
+.card ul {
+    list-style: inside;
+    padding: 0;
+    margin: 0;
+}
+
+.card li {
+    padding: 0.5rem 0;
+    margin-bottom: 0.2rem;
+    line-height: 1;
+  /* Add a subtle border between list items */
+  /*
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    */
+}
+
+/* Remove border from last list item */
+.card li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Style the links within list items */
+.card li a {
+    /* color: #58a6ff; */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card li a:hover {
+    /* color: #79b6ff; */
+    color: #58a6ff;
+    text-decoration: underline;
 }

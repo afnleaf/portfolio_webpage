@@ -21,19 +21,61 @@
         <h1>Development Portfolio</h1>
         <hr>
         <br>
-
+        
+        <!--
         <div class="card">
-            <span id="card-title">
-                <a href="https://deadlocker.tv">Deadlocker.tv</a>
-            </span>
-            <span id="card-repo">
-                <a href="https://github.com/afnleaf/deadlocker.tv"><small>repo</small></a>
+            <div class="title">
+                <span id="card-title">
+                    
+                </span>
+                <span id="card-repo">
+
+                </span>
+            </div>
+            <span id="card-desc">
+
             </span>
             <span id="card-tech">
-                Javascript, HTML, CSS, Go, Templ, Docker
+                <span id="tech-item"></span>
+                <span id="tech-item"></span>
+                <span id="tech-item"></span>
+                <span id="tech-item"></span>
+                <span id="tech-item"></span>
             </span>
+            <div id="card-list">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <br>
+        </div>
+        -->
+
+        <!-- Deadlocker.tv -->
+        <div class="card">
+            <div class="title">
+                <span id="card-title">
+                    <a href="https://deadlocker.tv">Deadlocker.tv</a>
+                </span>
+                <span id="card-repo">
+                    <a href="https://github.com/afnleaf/deadlocker.tv" id="image-link">
+                        <img src="github-icon.svg">
+                    </a>
+                </span>
+            </div>
             <span id="card-desc">
                 Website hosting various tools and resources for the game Deadlock. The tactical map is used by content creators, pro players and coaches.
+            </span>
+            <span id="card-tech">
+                <span id="tech-item">Javascript</span>
+                <span id="tech-item">HTML</span>
+                <span id="tech-item">CSS</span>
+                <span id="tech-item">Go</span>
+                <span id="tech-item">Templ</span>
+                <span id="tech-item">Docker</span>
             </span>
             <div id="card-list">
                     <ul>
@@ -44,100 +86,206 @@
             </div>
             <br>
         </div>
+
+
+        <!-- PaleoMap3D -->        
+        <div class="card">
+            <div class="title">
+                <span id="card-title">
+                    <a href="https://paleomap3d.duckdns.org/">PaleoMap3D</a>
+                </span>
+                <span id="card-repo">
+                    <a href="https://github.com/afnleaf/paleomap3d" id="image-link">
+                        <img src="github-icon.svg">
+                    </a>
+                </span>
+            </div>
+            <span id="card-desc">
+                3D Ancient Earth Globe
+            </span>
+            <span id="card-tech">
+                <span id="tech-item">Javascript</span>
+                <span id="tech-item">Three.js</span>
+                <span id="tech-item">HTML</span>
+                <span id="tech-item">CSS</span>
+                <span id="tech-item">C</span>
+                <span id="tech-item">Python</span>
+                <span id="tech-item">Bun</span>
+                <span id="tech-item">Elysia</span>
+                <span id="tech-item">Docker</span>
+            </span>
+            <div id="card-list">
+                <ul>
+                    <li>Developed a custom binary file to efficiently transport and then parse latitude, longitude and elevation data across http.</li>
+                    <li>Learned how to generate real time 3D graphics in the browser.</li>
+                    <li>Compiled data into image textures hosted on server for faster rendering.</li>
+                    <li>Added, Country Borders, Tectonic Plate lines as optional layers.</li>
+                </ul>
+            </div>
+            <br>
+        </div>
+
+
+        <!-- Replaycode-OCR -->
+        <div class="card">
+            <div class="title">
+                <span id="card-title">
+                    Replaycode-OCR
+                </span>
+                <span id="card-repo">
+                    <a href="https://github.com/afnleaf/ow2-replaycode-ocr" id="image-link">
+                        <img src="github-icon.svg">
+                    </a>
+                </span>
+            </div>
+            <span id="card-desc">
+                Discord bot for Overwatch replaycode extraction, image to text.
+            </span>
+            <span id="card-tech">
+                <span id="tech-item">Tesseract-OCR</span>
+                <span id="tech-item">DiscordAPI</span>
+            </span>
+            <div id="card-list">
+                <ul>
+                    <li>Used by over 100 teams!</li>
+                    <li>Developed a method to automatically parse specific alphanumeric characters out of a given image using OCR tools.</li>
+                    <li>Used OpenCV to template match and pre-process images before getting results from Tesseract-OCR.</li>
+                    <li>Created a test harness to track image processing improvements, achieving a 94% result accuracy.</li>
+                    <li>Made a user input, results based logging system to monitor bot performance in real time and collect edge cases to be fixed.</li>
+                    <li>Learned how to separate production and development environments using environment and other configuration files.</li>
+                </ul>
+            </div>
+            <br>
+        </div>
+
+
+        <!-- Pokepastefix -->
+        <div class="card">
+            <div class="title">
+                <span id="card-title">
+                    <a href="https://chromewebstore.google.com/detail/pokepastefix/ekceaboabpgkgbpigacngnjagcdhdkmn?hl=en">Pokepastefix</a>
+                </span>
+                <span id="card-repo">
+                    <a href="https://github.com/afnleaf/pokepastefix" id="image-link">
+                        <img src="github-icon.svg">
+                    </a>
+                </span>
+            </div>
+            <span id="card-desc">
+                A web extension that provides a simple fix to the core functionality of a pokemon team sharing tool used by thousands of people daily. The newest pokemon images continue to be missing from their server, this utility patches that issue up.
+            </span>
+            <span id="card-tech">
+                <span id="tech-item">Javascript</span>
+            </span>
+            <div id="card-list">
+                <ul>
+                    <li>Hundreds of users across multiple browsers!</li>
+                    <li>Learned how to manipulate the DOM via content scripts.</li>
+                    <li>Maintained software as new updates to the base game came out.</li>
+                    <li>Distributed the software to dozens of users via the Chrome and Firefox extension stores.</li>
+                    <li>Developed a static image webserver to serve the replacement images.</li>
+                </ul>
+            </div>
+            <br>
+        </div>
+
+
+        <!-- Pkautocalc -->
+        <div class="card">
+            <div class="title">
+                <span id="card-title">
+                    <a href="https://pkautocalc.duckdns.org">Pkautocalc</a>
+                </span>
+                <span id="card-repo">
+                    <a href="https://github.com/afnleaf/pkautocalc" id="image-link">
+                        <img src="github-icon.svg">
+                    </a>
+                </span>
+            </div>
+            <span id="card-desc">
+                Web App for automated Pokemon damage calculation. A tool that seeks to streamline and improve a process done by thousands of competitive players.
+            </span>
+            <span id="card-tech">
+                <span id="tech-item">Docker</span>
+                <span id="tech-item">Bun</span>
+                <span id="tech-item">Elysia</span>
+                <span id="tech-item">Typescript</span>
+                <span id="tech-item">HTML</span>
+                <span id="tech-item">CSS</span>
+            </span>
+            <div id="card-list">
+                <ul>
+                    <li>Built a webapp to automate and help with the teambuilding process for competitive Pokemon players.</li>
+                    <li>Learned how to self host and deploy a fully containerized webapp from home using docker on my own server.</li>
+                    <li>Built the front-end from pure HTML, CSS and Javascript.</li>
+                    <li>Implemented server side rendering for results, returning HTML as POST response.</li>
+                    <li>Interfaced with the <a href="https://github.com/smogon/damage-calc">@smogon/calc</a> API to make all the calculations based on user input.</li>
+                </ul>
+            </div>
+            <br>
+        </div>
+
+
+        <!-- MNIST Neural Net -->
+        <div class="card">
+            <div class="title">
+                <span id="card-title">
+                    <a href="https://github.com/afnleaf/MNIST_NeuralNet">MNIST Single Digit Image Recognition</a>
+                </span>
+                <span id="card-repo">
+                    <a href="https://github.com/afnleaf/MNIST_NeuralNet" id="image-link">
+                        <img src="github-icon.svg">
+                    </a>
+                </span>
+            </div>
+            <span id="card-desc">
+                A simple neural network built from scratch.
+            </span>
+            <span id="card-tech">
+                <span id="tech-item">Python</span>
+                <span id="tech-item">Numpy</span>
+                <span id="tech-item">Matplotlib</span>
+            </span>
+            <div id="card-list">
+                <ul>
+                    <li>Adjusted different hyperparameters (activation functions, layer size, layer number)</li>
+                    <li>Used matplotlib to create graphs, plotting accuracy and mean squared error for each epoch.</li>
+                </ul>     
+            </div>
+            <br>
+        </div>
         
 
-        <!--
-        <h2>
-            <a href="https://deadlocker.tv">Deadlocker.tv</a>
-        </h2>
-        <p>
-            <a href="https://github.com/afnleaf/deadlocker.tv"><small>repo</small></a>
-        </p>
-        <p><strong><em>Javascript, HTML, CSS, Go, Templ, Docker</em></strong></p>
-        <p>Website hosting various tools and resources for the game Deadlock. The tactical map is used by content creators, pro players and coaches.</p>
-        <ul>
-            <li>Created <a href="https://deadlocker.tv/farm">Souls/Time Graphs</a> to compare soul scaling between different resources.</li>
-            <li><a href="https://deadlocker.tv/map">Tactical map</a>, vanilla JS, Canvas API, layers.</li>
-            <li>Go backend with HTML templates to elevate the simple vanilla web stack.</li>
-        </ul>
-        <br>
-        -->
-    
-    
-        <h2>
-            <a href="https://paleomap3d.duckdns.org/">PaleoMap3D</a>
-            ...
-            <a href="https://github.com/afnleaf/paleomap3d"><small>repo</small></a>
-        </h2>
-        <p><strong><em>Javascript, Three.js, HTML, CSS, C, Python, Bun, Elysia, Docker</em></strong></p>
-        <p>3D Ancient Earth Globe</p>
-        <ul>
-            <li>Developed a custom binary file to efficiently transport and then parse latitude, longitude and elevation data across http.</li>
-            <li>Learned how to generate real time 3D graphics in the browser.</li>
-            <li>Compiled data into image textures hosted on server for faster rendering.</li>
-            <li>Added, Country Borders, Tectonic Plate lines as optional layers.</li>
-        </ul>
-        <br>
-    
-    
-        <h2><a href="https://github.com/afnleaf/ow2-replaycode-ocr">Replaycode-OCR</a></h2>
-        <p><strong><em>Docker, Python, OpenCV, Tesseract-OCR, DiscordAPI</em></strong></p>
-        <p>Discord bot for Overwatch replaycode extraction, image to text.</p>
-        <ul>
-            <li>Used by over 100 teams!</li>
-            <li>Developed a method to automatically parse specific alphanumeric characters out of a given image using OCR tools.</li>
-            <li>Used OpenCV to template match and pre-process images before getting results from Tesseract-OCR.</li>
-            <li>Created a test harness to track image processing improvements, achieving a 94% result accuracy.</li>
-            <li>Made a user input, results based logging system to monitor bot performance in real time and collect edge cases to be fixed.</li>
-            <li>Learned how to separate production and development environments using environment and other configuration files.</li>
-        </ul>
-        <br>
-    
-    
-        <h2><a href="https://github.com/afnleaf/pokepastefix">Pokepastefix</a></h2>
-        <p><strong><em>Javascript</em></strong></p>
-        <p>A web extension that provides a simple fix to the core functionality of a pokemon team sharing tool used by thousands of people daily. The newest pokemon images continue to be missing from their server, this utility patches that issue up.</p>
-        <ul>
-            <li>Hundreds of users across multiple browsers!</li>
-            <li>Learned how to manipulate the DOM via content scripts.</li>
-            <li>Maintained software as new updates to the base game came out.</li>
-            <li>Distributed the software to dozens of users via the Chrome and Firefox extension stores.</li>
-            <li>Developed a static image webserver to serve the replacement images.</li>
-        </ul>
-        <br>
+        <!-- Chess -->
+        <div class="card">
+            <div class="title">
+                <span id="card-title">
+                    <a href="https://github.com/afnleaf/AllenIversonChess">AI Chess</a>
+                </span>
+                <span id="card-repo">
+                    <a href="https://github.com/afnleaf/AllenIversonChess" id="image-link">
+                        <img src="github-icon.svg">                    
+                    </a>
+                </span>
+            </div>
+            <span id="card-desc">
+                Chess game for human and AI players.
+            </span>
+            <span id="card-tech">
+                <span id="tech-item">Python</span>
+                <span id="tech-item">Pygame</span>
+                <span id="tech-item">Numpy</span>
+            </span>
+            <div id="card-list">
+                <ul>
+                    <li>Built all components of a standard chess game for a human player.</li>
+                    <li>Implemented Negamax with Alpha Beta Pruning for search tree.</li>
+                    <li>Added Zobrist Hashing for Transposition Tables to reduce computational load.</li>
+                </ul>
+            </div>
+            <br>
+        </div>
 
-        <h2><a href="https://github.com/afnleaf/pkautocalc">Pkautocalc</a></h2>
-        <p><strong><em>Docker, Bun, Javascript, Typescript, Elysia, CSS, HTML</em></strong></p>
-        <p>Web App for automated Pokemon damage calculation. A tool that seeks to streamline and improve a process done by thousands of competitive players.</p>
-        <ul>
-            <li>Built a webapp to automate and help with the teambuilding process for competitive Pokemon players.</li>
-            <li>Learned how to self host and deploy a fully containerized webapp from home using docker on my own server.</li>
-            <li>Built the front-end from pure HTML, CSS and Javascript.</li>
-            <li>Implemented server side rendering for results, returning HTML as POST response.</li>
-            <li>Interfaced with the <a href="https://github.com/smogon/damage-calc">@smogon/calc</a> API to make all the calculations based on user input.</li>
-        </ul>
-        <br>
-    
-        <h2><a href="https://github.com/afnleaf/MNIST_NeuralNet">MNIST Single Digit Image Recognition</a></h2>
-        <p><strong><em>Python, Numpy, Matplotlib</em></strong></p>
-        <p>A simple neural network built from scratch.</p>
-        <ul>
-            <li>Adjusted different hyperparameters (activation functions, layer size, layer number)</li>
-            <li>Used matplotlib to create graphs, plotting accuracy and mean squared error for each epoch.</li>
-        </ul>
-        <br>
-    
-    
-        <h2><a href="https://github.com/afnleaf/AllenIversonChess">AI Chess</a></h2>
-        <p><strong><em>Python, Pygame, Numpy</em></strong></p>
-        <p>Chess game for human and AI players.</p>
-        <ul>
-            <li>Built all components of a standard chess game for a human player.</li>
-            <li>Implemented Negamax with Alpha Beta Pruning for search tree.</li>
-            <li>Added Zobrist Hashing for Transposition Tables to reduce computational load.</li>
-        </ul>
-        <br>
-    
     </div>
 </body>
 

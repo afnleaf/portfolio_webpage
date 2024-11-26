@@ -28,12 +28,13 @@ a:hover {
 /* card styles */
 .card {
     display: grid;
-    background: #fafafa;
-    border-radius: 1em;
+    gap: 0.8em;
     margin: 1em auto;
     padding: var(--card-padding);
-    width: 100%;
     box-sizing: border-box;
+    width: 100%;
+    background: #fafafa;
+    border-radius: 1em;
 }
 
 .title {
@@ -55,7 +56,7 @@ a:hover {
 
 #card-desc {
     line-height: 1.4;
-    margin: 0.5em 0;
+    margin: 0;
 }
 
 #card-tech {
@@ -69,9 +70,9 @@ a:hover {
     margin: 0;
     padding: 0.2rem 0.6rem;
     border-radius: 1rem;
-    font-family: monospace;
+    /* font-family: monospace; */
     font-size: 0.8rem;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     background: #d5d5d5;
     color: #111;
 }
@@ -84,13 +85,13 @@ a:hover {
 .card ul {
     list-style-position: outside;
     padding-left: 1.5em;
-    margin: 0.5em 0;
+    margin: 0;
 }
 
 .card li {
     padding: 0.2rem 0;
     margin-bottom: 0.2rem;
-    line-height: 1.4;
+    line-height: 1;
 }
 
 .card li a {

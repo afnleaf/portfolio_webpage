@@ -21,8 +21,55 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    color: #58a6ff;
+
+/* profile styles */
+.bio {
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+.bio p {
+    margin-bottom: 1rem;
+}
+
+.profile-links {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: opacity 0.2s;
+}
+
+.profile-link:hover {
+    opacity: 0.9;
+}
+
+.profile-link img {
+    width: 24px;
+    height: 24px;
+}
+
+.github {
+    background-color: #24292e;
+}
+
+.linkedin {
+    background-color: #0077b5;
+}
+
+.resume {
+    background-color: #2ecc71;
+    font-weight: 500;
 }
 
 /* card styles */
@@ -42,6 +89,10 @@ a:hover {
     align-items: center;
     gap: 1em;
     flex-wrap: wrap;
+}
+
+.portfolio a:hover {
+    color: #58a6ff;
 }
 
 #card-title {

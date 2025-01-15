@@ -54,9 +54,10 @@ a {
     opacity: 0.9;
 }
 
-.profile-link img {
+.profile-link object {
     width: 24px;
     height: 24px;
+    filter: brightness(0) saturate(100%) invert(1);
 }
 
 .github {
@@ -65,11 +66,13 @@ a {
 
 .linkedin {
     background-color: #0077b5;
+    fill: #fff;
 }
 
 .resume {
     /*background-color: #2ecc71;*/
     background-color: #2d8a46;
+    fill: #fff;
 }
 
 /* card styles */

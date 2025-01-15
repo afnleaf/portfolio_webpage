@@ -54,7 +54,7 @@ a {
     opacity: 0.9;
 }
 
-.profile-link object {
+.profile-link img {
     width: 24px;
     height: 24px;
     filter: brightness(0) saturate(100%) invert(1);

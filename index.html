@@ -424,7 +424,7 @@
             <section id="home" class="hero">
                 <h1>Name</h1>
                 <h2 class="section-title">A polyglot software engineer who architects performant, end-to-end systems from zero to one.</h2>
-                <p>I have a proven track record of building, and then shipping products to real users.</p>
+                <p>I have a proven track record of building, and then shipping products to real users, driving engagement and solving complex problems with elegant, efficient code.</p>
 
                 <div class="skills-grid">
                     
@@ -441,22 +441,22 @@
                     <div class="skill-card">
                         <svg class="skill-icon" aria-hidden="true" focusable="false"><use href="#icon-3d"></use></svg>
                         <h3>Data Visualization</h3>
-                        <p>text goes here</p>
+                        <p>Transforming complex datasets into intuitive and interactive 3D visualizations.</p>
                     </div>
                     <div class="skill-card">
                         <svg class="skill-icon" aria-hidden="true" focusable="false"><use href="#icon-aiml"></use></svg>
                         <h3>AI Automation</h3>
-                        <p>Automation of key processes and workflows</p>
+                        <p>Automating key processes and workflows using cutting-edge AI models.</p>
                     </div>
                     <div class="skill-card">
                         <svg class="skill-icon" aria-hidden="true" focusable="false"><use href="#icon-dataeng"></use></svg>
                         <h3>Data Pipeline Engineering</h3>
-                        <p>text goes here</p>
+                        <p>Building efficient and reliable ETL/ELT pipelines for large-scale data processing.</p>
                     </div>
                     <div class="skill-card">
                         <svg class="skill-icon" aria-hidden="true" focusable="false"><use href="#icon-devops"></use></svg>
                         <h3>DevOps</h3>
-                        <p>text goes here</p>
+                        <p>Automating deployment, scaling, and operations with CI/CD and containerization.</p>
                     </div>
                 </div>
             </section>
@@ -471,7 +471,7 @@
                         <img src="https://raw.githubusercontent.com/afnleaf/pokepastefix/main/pokepastefixdemo.gif" alt="pokepastefix" title="pokepastefix" style="object-position: left top;">
                         <div class="project-content">
                             <h3>Pokepastefix & HQmons</h3>
-                            <p>A client-server solution to fix and enhance missing functionality of the <a href="https://pokepast.es">pokepast.es</a> website. The browser extension replaces missing images using dynamic inline resource insertion, while the art is served by a custom Bun and Elysia.js backend. Extension: 800+ daily active users. API: 10k requests a month.</p>
+                            <p>A client-server solution to fix and enhance missing functionality of the <a href="https://pokepast.es">pokepast.es</a> website. The browser extension replaces missing images using dynamic inline resource insertion, while the art is served by a custom Bun and Elysia.js backend. The extension serves over 800 daily active users, with the API handling 10k+ monthly requests.</p>
                             <div class="tech-tags">
                                 <span>JavaScript</span><span>TypeScript</span><span>Bun</span><span>Elysia.js</span><span>Docker</span><span>Browser Extension</span><span>HTML/CSS</span>
                             </div>
@@ -489,7 +489,7 @@
                         <img src="https://raw.githubusercontent.com/afnleaf/paleomap3D/refs/heads/main/southamericaafrica.gif" alt="paleomap3D" title="paleomap3D">
                         <div class="project-content">
                             <h3>PaleoMap3D</h3>
-                            <p>An interactive 3D globe visualizing continental drift and paleogeographic data. Built with Three.js for the frontend and a custom data processing pipeline in C, Rust, and Python for handling large paleontological datasets.</p>
+                            <p>An interactive 3D globe visualizing continental drift and paleogeographic data across 500+ million years. Built with Three.js on the client-side and a custom data pipeline written in C, Rust, and Python that processes large NetCDF datasets into a compressed binary format or texture for efficient delivery.</p>
                             <div class="tech-tags">
                                 <span>JavaScript</span><span>Typescript</span><span>Three.js</span><span>HTML/CSS</span><span>Data Pipeline</span><span>C</span><span>Rust</span><span>Python</span><span>Docker</span>
                             </div>
@@ -505,7 +505,7 @@
                         <img src="https://raw.githubusercontent.com/afnleaf/ow2-replaycode-ocr/refs/heads/main/ow2replaycodedemo.gif" alt="ow2-replaycode-ocr" title="ow2-replaycode-ocr">
                         <div class="project-content">
                             <h3>OW2 Replaycode OCR</h3>
-                            <p>A high-accuracy OCR tool to extract Overwatch 2 replay codes from screenshots and video feeds. It uses a fine-tuned model and advanced image pre-processing. Installed on 150 servers and used by professional esports teams like GenG.</p>
+                            <p>A high-accuracy Discord bot for extracting Overwatch 2 replay codes from screenshots. It uses OpenCV for template matching and a dual-pipeline approach with Tesseract-OCR and the Granite Vision VLM for character recognition. Deployed on over 150 servers and used by professional teams like GenG.</p>
                             <div class="tech-tags">
                                 <span>Python</span><span>AI/ML</span><span>OpenCV</span><span>PyTorch</span><span>PostgreSQL</span><span>Docker</span><span>Tesseract-OCR</span>
                             </div>
@@ -520,7 +520,7 @@
                         <img src="https://raw.githubusercontent.com/afnleaf/deadlocker.tv/refs/heads/main/deadlockertv_map.png" alt="deadlocker.tv" title="deadlocker.tv">
                         <div class="project-content">
                             <h3>Deadlocker.tv</h3>
-                            <p>A real-time strategy map and community hub for a persistent browser-based game. The frontend uses the browser canvas for efficient rendering, powered by a lightweight Go backend with HTMX for dynamic updates.</p>
+                            <p>A community hub for the game Deadlock, featuring a suite of web tools built with Go, Templ, and HTMX for a fast, server-rendered experience. The site includes an interactive tactical map with real-time drawing capabilities and a farm graph to visualize in-game resource efficiency.</p>
                             <div class="tech-tags">
                                 <span>JavaScript</span><span>HTML/CSS</span><span>Browser Canvas</span><span>Go</span><span>templ</span><span>Docker</span>
                             </div>
@@ -599,12 +599,17 @@
             };
 
             projectGrid.addEventListener('click', (e) => {
-                const card = e.target.closest('.project-card[data-url]');
-                
-                if (card && !e.target.closest('a')) {
-                    e.preventDefault();
-                    const url = card.dataset.url;
-                    openIframe(url);
+                // First, check if the element that was clicked is an image.
+                if (e.target.tagName === 'IMG') {
+                    // If it is, find its parent card to get the data-url attribute.
+                    const card = e.target.closest('.project-card[data-url]');
+            
+                    // If the image is inside a valid, clickable card, open the modal.
+                    if (card) {
+                        e.preventDefault(); // Prevent any default image behavior
+                        const url = card.dataset.url;
+                        openIframe(url);
+                    }
                 }
             });
 

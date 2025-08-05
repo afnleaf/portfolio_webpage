@@ -4,309 +4,647 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>stezup.dev</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="styles.css" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <!-- CSS here instead of stylesheet -->
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding-top: 4rem;
+            font-family: "Trebuchet MS"
+        }
+
+        header {
+            position: fixed;
+            border-bottom: 1px solid;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 5%;
+            backdrop-filter: blur(1rem);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 80rem;
+            margin: 0 auto;
+            height: 2.2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: black;
+        }
+
+        main {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 2rem 5% 2rem 5%;
+            transition: padding 0.3s ease-in-out;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.2rem;
+            margin-top: 1.2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        /* hero */
+        .hero {
+            text-align: center;
+            padding: 2rem 0 6rem 0;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 50rem;
+            margin: 0 auto;
+        }
+
+        /* skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, min(25rem, 100%));
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            padding: 2rem;
+            margin-top: 0;
+            border-radius: 0.5rem;
+            border: 1px solid;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-0.3rem);
+            box-shadow: 0 0.6rem 1.2rem rgba(0,0,0,0.2);
+        }
+
+        .skill-card svg {
+            width: 3rem;
+            height: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-card p {
+            font-size: 1rem;
+            line-height: 1;
+            margin: 0 auto;
+        }
+
+        /* projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, min(25rem, 100%));
+            justify-content: center;
+            gap: 1.2rem;
+        }
+
+        .project-card {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            border: 1px solid;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Add this to your existing project card CSS to show it's clickable */
+        .project-card[data-url] {
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-0.1rem);
+            box-shadow: 0 0.6rem 1.2rem rgba(0,0,0,0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 16rem;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-content h3 {
+            font-size: 1.75rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .tech-tags {
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-tags span {
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.75rem;
+            border: 1px solid;
+            font-size: 0.8rem;
+            font-family: monospace;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .project-links a {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            border: 1px solid;
+            padding: 0.5rem 0.25rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            justify-content: center;
+        }
+        
+        .project-links a:hover {
+            transform: translateY(-0.1rem);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* contact */
+        #contact {
+            text-align: center;
+            padding: 4rem 0;
+            border-bottom: 1px solid;
+        }
+        
+        #contact:last-of-type {
+            border-bottom: none;
+        }
+        
+        #contact p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 40rem;
+            margin: 0 auto 3rem auto;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .contact-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .contact-links a svg {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) saturate(100%) invert(1);
+        }
+        
+        .contact-links a span {
+            color: #fff;
+        }
+        
+        .github-link {
+            background-color: #24292e;
+        }
+        
+        .linkedin-link {
+            background-color: #0A66C2;
+        }
+        
+        .resume-link {
+            background-color: #3b8b4f;
+        }
+
+
+        /* iframe */
+
+        #iframe-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1999;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #iframe-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+        
+            width: 95vw;
+            height: 95vh;
+            
+            background-color: #1a1a1a;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        
+        #iframe-overlay.visible {
+            display: block;
+            opacity: 1;
+        }
+
+        #iframe-container.visible {
+            display: flex;
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        
+        .iframe-header {
+            display: flex;
+            justify-content: space-between; /* This is the magic! */
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+            flex-shrink: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        #close-iframe-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            line-height: 1;
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        #close-iframe-btn:hover {
+            opacity: 1;
+        }
+
+        #project-iframe {
+            width: 100%;
+            height: 100%; 
+            border: none;
+            flex-grow: 1;
+            background-color: #000;
+        }
+        
+        #open-in-new-tab-btn {
+            display: block;
+            color: #fff;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+            padding: 0.25rem; /* Add padding for easier clicking */
+            line-height: 0; /* Helps align the SVG */
+        }
+        #open-in-new-tab-btn:hover {
+            opacity: 1;
+        }
+        #open-in-new-tab-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke: #fff; /* Make sure the icon is white */
+        }
+    </style>
 </head>
-<body>
-    <!-- 
-    <header>
-    <h1>Hi, my name is Stefan.</h1>
-    </header>
-    <h2>I have a passion for designing and building tools for competitive gamers.</h2>
-    <h3>Here is a link to my <a href="resume.pdf">resume</a>, you can find me on <a href="https://github.com/afnleaf">github</a> or <a href="https://www.linkedin.com/in/stefan-zupancic-44a737291">linkedin</a>.</h3>
-    -->
-    <!--<p>I used to coach Overwatch professionally. You can find me <a href="https://afnleaf.github.io/resume.html">here</a>.</p>-->
-    <header>
-        <div class="bio">
-            <h1>Hi, I'm Stefan.</h1>
-            <p>
-                I connect the worlds of competitive gaming and software engineering. Harnessing deep esports expertise to create practical tools that serve gaming communities. These include everything from high-performance tactical analysis tools to community-driven solutions that thousands of players use daily. My expertise in building performant applications, data visualization systems, and automation tools translates to solving complex problems in any technical domain.
-            </p>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">logo</div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="home" class="hero">
+                <h1>Name</h1>
+                <h2 class="section-title">A polyglot software engineer who architects performant, end-to-end systems from zero to one.</h2>
+                <p>I have a proven track record of building, and then shipping products to real users.</p>
 
-            <div class="profile-links">
-                <a href="https://github.com/afnleaf" target="_blank" class="profile-link github">
-                    <span>GitHub</span>
-                    <img src="github-icon.svg" alt="GitHub">
+                <div class="skills-grid">
+                    
+                    <div class="skill-card">
+                        <svg class="skill-icon" aria-hidden="true" focusable="false"><use href="#icon-systems"></use></svg>
+                        <h3>System Design</h3>
+                        <p>text goes here</p>
+                    </div>
+                    <div class="skill-card">
+                        <svg class="skill-icon" aria-hidden="true" focusable="false"><use href="#icon-full-stack"></use></svg>
+                        <h3>Full-Stack Development</h3>
+                        <p>text goes here</p>
+                    </div>
+                    <div class="skill-card">
+                        <svg class="skill-icon" aria-hidden="true" focusable="false"><use href="#icon-3d"></use></svg>
+                        <h3>Data Visualization</h3>
+                        <p>text goes here</p>
+                    </div>
+                    <div class="skill-card">
+                        <svg class="skill-icon" aria-hidden="true" focusable="false"><use href="#icon-aiml"></use></svg>
+                        <h3>AI Automation</h3>
+                        <p>Automation of key processes and workflows</p>
+                    </div>
+                    <div class="skill-card">
+                        <svg class="skill-icon" aria-hidden="true" focusable="false"><use href="#icon-dataeng"></use></svg>
+                        <h3>Data Pipeline Engineering</h3>
+                        <p>text goes here</p>
+                    </div>
+                    <div class="skill-card">
+                        <svg class="skill-icon" aria-hidden="true" focusable="false"><use href="#icon-devops"></use></svg>
+                        <h3>DevOps</h3>
+                        <p>text goes here</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="projects">
+                <h2 class="section-title">Projects</h2>
+                
+                <div class="project-grid">
+                
+                    <!-- pokepastefix/hqmons-->
+                    <div class="project-card">
+                        <img src="https://raw.githubusercontent.com/afnleaf/pokepastefix/main/pokepastefixdemo.gif" alt="pokepastefix" title="pokepastefix" style="object-position: left top;">
+                        <div class="project-content">
+                            <h3>Pokepastefix & HQmons</h3>
+                            <p>A client-server solution to fix and enhance missing functionality of the <a href="https://pokepast.es">pokepast.es</a> website. The browser extension replaces missing images using dynamic inline resource insertion, while the art is served by a custom Bun and Elysia.js backend. Extension: 800+ daily active users. API: 10k requests a month.</p>
+                            <div class="tech-tags">
+                                <span>JavaScript</span><span>TypeScript</span><span>Bun</span><span>Elysia.js</span><span>Docker</span><span>Browser Extension</span><span>HTML/CSS</span>
+                            </div>
+                            <div class="project-links">
+                                <a target="_blank" href="https://github.com/afnleaf/pokepastefix">extension repo</a>
+                                <a target="_blank" href="https://chromewebstore.google.com/detail/pokepastefix/ekceaboabpgkgbpigacngnjagcdhdkmn">chrome webstore</a>
+                                <a target="_blank" href="https://github.com/afnleaf/hqmons">server repo</a>
+                                <a target="_blank" href="https://chiy.uk">chiy.uk</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- paleomap3D -->
+                    <div class="project-card" data-url="https://paleomap3d.org">
+                        <img src="https://raw.githubusercontent.com/afnleaf/paleomap3D/refs/heads/main/southamericaafrica.gif" alt="paleomap3D" title="paleomap3D">
+                        <div class="project-content">
+                            <h3>PaleoMap3D</h3>
+                            <p>An interactive 3D globe visualizing continental drift and paleogeographic data. Built with Three.js for the frontend and a custom data processing pipeline in C, Rust, and Python for handling large paleontological datasets.</p>
+                            <div class="tech-tags">
+                                <span>JavaScript</span><span>Typescript</span><span>Three.js</span><span>HTML/CSS</span><span>Data Pipeline</span><span>C</span><span>Rust</span><span>Python</span><span>Docker</span>
+                            </div>
+                            <div class="project-links">
+                                <a target="_blank" href="https://paleomap3d.org">Website</a>
+                                <a target="_blank" href="https://github.com/afnleaf/paleomap3D">Repo</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- OW2 Replaycode -->
+                    <div class="project-card">
+                        <img src="https://raw.githubusercontent.com/afnleaf/ow2-replaycode-ocr/refs/heads/main/ow2replaycodedemo.gif" alt="ow2-replaycode-ocr" title="ow2-replaycode-ocr">
+                        <div class="project-content">
+                            <h3>OW2 Replaycode OCR</h3>
+                            <p>A high-accuracy OCR tool to extract Overwatch 2 replay codes from screenshots and video feeds. It uses a fine-tuned model and advanced image pre-processing. Installed on 150 servers and used by professional esports teams like GenG.</p>
+                            <div class="tech-tags">
+                                <span>Python</span><span>AI/ML</span><span>OpenCV</span><span>PyTorch</span><span>PostgreSQL</span><span>Docker</span><span>Tesseract-OCR</span>
+                            </div>
+                            <div class="project-links">
+                                <a target="_blank" href="https://github.com/afnleaf/ow2-replaycode-ocr/">repo</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- deadlocker.tv -->
+                    <div class="project-card" data-url="https://deadlocker.tv/map">
+                        <img src="https://raw.githubusercontent.com/afnleaf/deadlocker.tv/refs/heads/main/deadlockertv_map.png" alt="deadlocker.tv" title="deadlocker.tv">
+                        <div class="project-content">
+                            <h3>Deadlocker.tv</h3>
+                            <p>A real-time strategy map and community hub for a persistent browser-based game. The frontend uses the browser canvas for efficient rendering, powered by a lightweight Go backend with HTMX for dynamic updates.</p>
+                            <div class="tech-tags">
+                                <span>JavaScript</span><span>HTML/CSS</span><span>Browser Canvas</span><span>Go</span><span>templ</span><span>Docker</span>
+                            </div>
+                            <div class="project-links">
+                                <a target="_blank" href="https://deadlocker.tv">website</a>
+                                <a target="_blank" href="https://deadlocker.tv/map">map</a>
+                                <a target="_blank" href="https://github.com/afnleaf/deadlocker.tv">repo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="contact">
+                <h2 class="section-title">Contact</h2>
+                <p>Have a question or want to work together? Feel free to reach out.</p>
+                <div class="contact-links">
+                    <a href="https://github.com/afnleaf" target="_blank" class="github-link">
+                        <span>Github</span>
+                        <svg aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/stefan-z-44a737291/" target="_blank" class="linkedin-link">
+                        <span>LinkedIn</span>
+                        <svg aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                    </a>
+                    <a href="resume.pdf" target="_blank" class="resume-link">
+                        <span>Resume</span>
+                        <svg aria-hidden="true" focusable="false"><use href="#icon-resume"></use></svg>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            © 2025. All projects are open source.
+        </footer>
+
+
+        <!-- iframe -->
+        <div id="iframe-overlay"></div>
+        <div id="iframe-container">
+            <div class="iframe-header">
+                <!-- Close button (will be on the left) -->
+                <button id="close-iframe-btn" title="Close">&times;</button>
+                <!-- New tab button (will be on the right) -->
+                <a id="open-in-new-tab-btn" href="#" target="_blank" title="Open in new tab">
+                    <svg aria-hidden="true" focusable="false"><use href="#icon-new-tab"></use></svg>
                 </a>
-
-                <a href="https://www.linkedin.com/in/stefan-zupancic-44a737291" target="_blank" class="profile-link linkedin">
-                    <span>LinkedIn</span>
-                    <img src="linkedin-icon.svg" alt="LinkedIn">
-                </a>
-
-                <a href="/resume.pdf" target="_blank" class="profile-link resume">
-                    <span>Resume</span>
-                    <img src="resume-icon.svg" alt="Resume">
-                </a>
             </div>
-        </div>
-    </header>
-
-
-    <!-- Portfolio cards ----------------------------------->
-    <div class="portfolio">
-        <h1>Development Portfolio</h1>
-        <hr>
-        <br>
-
-        <!-- Hokej 3D-->
-        <div class="card">
-            <div class="title">
-                <span id="card-title">
-                    <a href="https://stezup.dev/hokej" target="_blank">NHL Play-by-play 3D</a>
-                </span>
-                <span id="card-repo">
-                    <a href="https://github.com/afnleaf/hockey3d" target="_blank" id="image-link">
-                        <img src="github-icon.svg">
-                    </a>
-                </span>
-            </div>
-            <span id="card-desc">
-                 Interactive 3D visualization of NHL game events and player movements.
-            </span>
-            <span id="card-tech">
-                <span id="tech-item">Three.js</span>
-                <span id="tech-item">Rust</span>
-                <span id="tech-item">Javascript</span>
-                <span id="tech-item">NHL-API</span>
-            </span>
-            <div id="card-list">
-                <ul>
-                    <li>Developed simple JSON to CSV parser.</li>
-                    <li>Created custom HTML packer to bundle the dependencies into an offline browser app.</li>
-                    <li>Visualized goals, shots on goal and missed shots within a 3d space.</li>
-                </ul>
-            </div>
+            <iframe id="project-iframe" src="" frameborder="0" allowfullscreen></iframe>
         </div>
 
-        
-        <!-- Replaycode-OCR -->
-        <div class="card">
-            <div class="title">
-                <span id="card-title">
-                    <a href="https://github.com/afnleaf/ow2-replaycode-ocr" target="_blank">Replaycode-OCR</a>
-                </span>
-                <span id="card-repo">
-                    <a href="https://github.com/afnleaf/ow2-replaycode-ocr" target="_blank" id="image-link">
-                        <img src="github-icon.svg">
-                    </a>
-                </span>
-            </div>
-            <span id="card-desc">
-                Discord bot for Overwatch replaycode extraction, image to text.
-            </span>
-            <span id="card-tech">
-                <span id="tech-item">Python</span>
-                <span id="tech-item">OpenCV</span>
-                <span id="tech-item">Tesseract-OCR</span>
-                <span id="tech-item">DiscordAPI</span>
-                <span id="tech-item">Pandas</span>
-                <span id="tech-item">Numpy</span>
-            </span>
-            <div id="card-list">
-                <ul>
-                    <li>Used by over 100 teams!</li>
-                    <li>Developed a method to automatically parse specific alphanumeric characters out of a given image using OCR tools.</li>
-                    <li>Used OpenCV to template match and pre-process images before getting results from Tesseract-OCR.</li>
-                    <li>Created a test harness to track image processing improvements, achieving a 94% result accuracy.</li>
-                    <li>Made a user input, results based logging system to monitor bot performance in real time and collect edge cases to be fixed.</li>
-                    <li>Learned how to separate production and development environments using environment and other configuration files.</li>
-                </ul>
-            </div>
-        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
 
-        <!-- PaleoMap3D -->        
-        <div class="card">
-            <div class="title">
-                <span id="card-title">
-                    <a href="https://paleomap3d.org/" target="_blank">PaleoMap3D</a>
-                </span>
-                <span id="card-repo">
-                    <a href="https://github.com/afnleaf/paleomap3d" target="_blank" id="image-link">
-                        <img src="github-icon.svg">
-                    </a>
-                </span>
-            </div>
-            <span id="card-desc">
-                3D Ancient Earth Globe
-            </span>
-            <span id="card-tech">
-                <span id="tech-item">Javascript</span>
-                <span id="tech-item">Three.js</span>
-                <span id="tech-item">HTML</span>
-                <span id="tech-item">CSS</span>
-                <span id="tech-item">C</span>
-                <span id="tech-item">Python</span>
-                <span id="tech-item">Bun</span>
-                <span id="tech-item">Elysia</span>
-                <span id="tech-item">Docker</span>
-            </span>
-            <div id="card-list">
-                <ul>
-                    <li>Developed a custom binary file to efficiently transport and then parse latitude, longitude and elevation data across http.</li>
-                    <li>Learned how to generate real time 3D graphics in the browser.</li>
-                    <li>Compiled data into image textures hosted on server for faster rendering.</li>
-                    <li>Added, Country Borders, Tectonic Plate lines as optional layers.</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Deadlocker.tv -->
-        <div class="card">
-            <div class="title">
-                <span id="card-title">
-                    <a href="https://deadlocker.tv" target="_blank">Deadlocker.tv</a>
-                </span>
-                <span id="card-repo">
-                    <a href="https://github.com/afnleaf/deadlocker.tv" target="_blank" id="image-link">
-                        <img src="github-icon.svg">
-                    </a>
-                </span>
-            </div>
-            <span id="card-desc">
-                Website hosting various tools and resources for the game Deadlock. The tactical map is used by content creators, pro players and coaches.
-            </span>
-            <span id="card-tech">
-                <span id="tech-item">Javascript</span>
-                <span id="tech-item">HTML</span>
-                <span id="tech-item">CSS</span>
-                <span id="tech-item">Go</span>
-                <span id="tech-item">Templ</span>
-                <span id="tech-item">Docker</span>
-            </span>
-            <div id="card-list">
-                    <ul>
-                        <li>Created <a href="https://deadlocker.tv/farm" target="_blank">Souls/Time Graphs</a> to compare soul scaling between different resources.</li>
-                        <li><a href="https://deadlocker.tv/map" target="_blank">Tactical map</a>, vanilla JS, Canvas API, layers.</li>
-                        <li>Go backend with HTML templates to elevate the simple vanilla web stack.</li>
-                    </ul>
-            </div>
-        </div>
+            const projectGrid = document.querySelector('.project-grid');
+            const iframeOverlay = document.getElementById('iframe-overlay');
+            const iframeContainer = document.getElementById('iframe-container');
+            const projectIframe = document.getElementById('project-iframe');
+            const closeIframeBtn = document.getElementById('close-iframe-btn');
+            const openInNewTabBtn = document.getElementById('open-in-new-tab-btn');
 
-        <!-- Pokepastefix -->
-        <div class="card">
-            <div class="title">
-                <span id="card-title">
-                    <a href="https://chromewebstore.google.com/detail/pokepastefix/ekceaboabpgkgbpigacngnjagcdhdkmn?hl=en" target="_blank">Pokepastefix</a>
-                </span>
-                <span id="card-repo">
-                    <a href="https://github.com/afnleaf/pokepastefix" target="_blank" id="image-link">
-                        <img src="github-icon.svg">
-                    </a>
-                </span>
-            </div>
-            <span id="card-desc">
-                A web extension that provides a simple fix to the core functionality of a pokemon team sharing tool used by thousands of people daily. The newest pokemon images continue to be missing from their server, this utility patches that issue up.
-            </span>
-            <span id="card-tech">
-                <span id="tech-item">Javascript</span>
-            </span>
-            <div id="card-list">
-                <ul>
-                    <li>Hundreds of users across multiple browsers!</li>
-                    <li>Learned how to manipulate the DOM via content scripts.</li>
-                    <li>Maintained software as new updates to the base game came out.</li>
-                    <li>Distributed the software to dozens of users via the Chrome and Firefox extension stores.</li>
-                    <li>Developed a static image webserver to serve the replacement images.</li>
-                </ul>
-            </div>
-        </div>
+            const openIframe = (url) => {
+                projectIframe.src = url;
+                openInNewTabBtn.href = url;
+                iframeOverlay.classList.add('visible');
+                iframeContainer.classList.add('visible');
+                document.body.style.overflow = 'hidden';
+            };
 
-        <!-- Pkautocalc -->
-        <div class="card">
-            <div class="title">
-                <span id="card-title">
-                    <a href="https://pkautocalc.duckdns.org" target="_blank">Pkautocalc</a>
-                </span>
-                <span id="card-repo">
-                    <a href="https://github.com/afnleaf/pkautocalc" target="_blank" id="image-link">
-                        <img src="github-icon.svg">
-                    </a>
-                </span>
-            </div>
-            <span id="card-desc">
-                Web App for automated Pokemon damage calculation. A tool that seeks to streamline and improve a process done by thousands of competitive players.
-            </span>
-            <span id="card-tech">
-                <span id="tech-item">Docker</span>
-                <span id="tech-item">Bun</span>
-                <span id="tech-item">Elysia</span>
-                <span id="tech-item">Typescript</span>
-                <span id="tech-item">HTML</span>
-                <span id="tech-item">CSS</span>
-            </span>
-            <div id="card-list">
-                <ul>
-                    <li>Built a webapp to automate and help with the teambuilding process for competitive Pokemon players.</li>
-                    <li>Learned how to self host and deploy a fully containerized webapp from home using docker on my own server.</li>
-                    <li>Built the front-end from pure HTML, CSS and Javascript.</li>
-                    <li>Implemented server side rendering for results, returning HTML as POST response.</li>
-                    <li>Interfaced with the <a href="https://github.com/smogon/damage-calc" target="_blank">@smogon/calc</a> API to make all the calculations based on user input.</li>
-                </ul>
-            </div>
-        </div>
+            const closeIframe = () => {
+                iframeOverlay.classList.remove('visible');
+                iframeContainer.classList.remove('visible');
+                projectIframe.src = '';
+                document.body.style.overflow = '';
+            };
 
+            projectGrid.addEventListener('click', (e) => {
+                const card = e.target.closest('.project-card[data-url]');
+                
+                if (card && !e.target.closest('a')) {
+                    e.preventDefault();
+                    const url = card.dataset.url;
+                    openIframe(url);
+                }
+            });
 
-        <!-- MNIST Neural Net -->
-        <div class="card">
-            <div class="title">
-                <span id="card-title">
-                    <a href="https://github.com/afnleaf/MNIST_NeuralNet" target="_blank">MNIST Single Digit Image Recognition</a>
-                </span>
-                <span id="card-repo">
-                    <a href="https://github.com/afnleaf/MNIST_NeuralNet" target="_blank" id="image-link">
-                        <img src="github-icon.svg">
-                    </a>
-                </span>
-            </div>
-            <span id="card-desc">
-                A simple neural network built from scratch.
-            </span>
-            <span id="card-tech">
-                <span id="tech-item">Python</span>
-                <span id="tech-item">Numpy</span>
-                <span id="tech-item">Matplotlib</span>
-            </span>
-            <div id="card-list">
-                <ul>
-                    <li>Adjusted different hyperparameters (activation functions, layer size, layer number)</li>
-                    <li>Used matplotlib to create graphs, plotting accuracy and mean squared error for each epoch.</li>
-                </ul>     
-            </div>
-        </div>
-        
+            closeIframeBtn.addEventListener('click', closeIframe);
+            iframeOverlay.addEventListener('click', closeIframe);
 
-        <!-- Chess -->
-        <div class="card">
-            <div class="title">
-                <span id="card-title">
-                    <a href="https://github.com/afnleaf/AllenIversonChess">AI Chess</a>
-                </span>
-                <span id="card-repo">
-                    <a href="https://github.com/afnleaf/AllenIversonChess" id="image-link">
-                        <img src="github-icon.svg">
-                    </a>
-                </span>
-            </div>
-            <span id="card-desc">
-                Chess game for human and AI players.
-            </span>
-            <span id="card-tech">
-                <span id="tech-item">Python</span>
-                <span id="tech-item">Pygame</span>
-                <span id="tech-item">Numpy</span>
-            </span>
-            <div id="card-list">
-                <ul>
-                    <li>Built all components of a standard chess game for a human player.</li>
-                    <li>Implemented Negamax with Alpha Beta Pruning for search tree.</li>
-                    <li>Added Zobrist Hashing for Transposition Tables to reduce computational load.</li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</body>
-
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && iframeContainer.classList.contains('visible')) {
+                    closeIframe();
+                }
+            });
+        });
+        </script>
+    </body>
 </html>
+
+
+
+
+
+
+
+<!-- hidden svg variables -->
+<svg style="display: none; position: absolute; width: 0; height: 0; overflow: hidden;">
+    <symbol id="icon-full-stack" viewBox="0 0 16 16">
+        <path d="m1.75 11 6.25 3.25 6.25-3.25m-12.5-3 6.25 3.25 6.25-3.25m-6.25-6.25-6.25 3.25 6.25 3.25 6.25-3.25z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+    </symbol>
+    <symbol id="icon-3d" viewbox="0 0 24 24">
+        <path d="M12 10.2308L3.08495 7.02346M12 10.2308L20.9178 7.03406M12 10.2308V20.8791M5.13498 18.5771L10.935 20.6242C11.3297 20.7635 11.527 20.8331 11.7294 20.8608C11.909 20.8853 12.091 20.8853 12.2706 20.8608C12.473 20.8331 12.6703 20.7635 13.065 20.6242L18.865 18.5771C19.6337 18.3058 20.018 18.1702 20.3018 17.9269C20.5523 17.7121 20.7459 17.4386 20.8651 17.1308C21 16.7823 21 16.3747 21 15.5595V8.44058C21 7.62542 21 7.21785 20.8651 6.86935C20.7459 6.56155 20.5523 6.28804 20.3018 6.0732C20.018 5.82996 19.6337 5.69431 18.865 5.42301L13.065 3.37595C12.6703 3.23665 12.473 3.167 12.2706 3.13936C12.091 3.11484 11.909 3.11484 11.7294 3.13936C11.527 3.167 11.3297 3.23665 10.935 3.37595L5.13498 5.42301C4.36629 5.69431 3.98195 5.82996 3.69824 6.0732C3.44766 6.28804 3.25414 6.56155 3.13495 6.86935C3 7.21785 3 7.62542 3 8.44058V15.5595C3 16.3747 3 16.7823 3.13495 17.1308C3.25414 17.4386 3.44766 17.7121 3.69824 17.9269C3.98195 18.1702 4.36629 18.3058 5.13498 18.5771Z" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>  
+    </symbol>
+    <symbol id="icon-aiml" viewBox="0 0 48 48"><g fill="#000000"><path d="M45.6,18.7,41,14.9V7.5a1,1,0,0,0-.6-.9L30.5,2.1h-.4l-.6.2L24,5.9,18.5,2.2,17.9,2h-.4L7.6,6.6a1,1,0,0,0-.6.9v7.4L2.4,18.7a.8.8,0,0,0-.4.8v9H2a.8.8,0,0,0,.4.8L7,33.1v7.4a1,1,0,0,0,.6.9l9.9,4.5h.4l.6-.2L24,42.1l5.5,3.7.6.2h.4l9.9-4.5a1,1,0,0,0,.6-.9V33.1l4.6-3.8a.8.8,0,0,0,.4-.7V19.4h0A.8.8,0,0,0,45.6,18.7Zm-5.1,6.8H42v1.6l-3.5,2.8-.4.3-.4-.2a1.4,1.4,0,0,0-2,.7,1.5,1.5,0,0,0,.6,2l.7.3h0v5.4l-6.6,3.1-4.2-2.8-.7-.5V25.5H27a1.5,1.5,0,0,0,0-3H25.5V9.7l.7-.5,4.2-2.8L37,9.5v5.4h0l-.7.3a1.5,1.5,0,0,0-.6,2,1.4,1.4,0,0,0,1.3.9l.7-.2.4-.2.4.3L42,20.9v1.6H40.5a1.5,1.5,0,0,0,0,3ZM21,25.5h1.5V38.3l-.7.5-4.2,2.8L11,38.5V33.1h0l.7-.3a1.5,1.5,0,0,0,.6-2,1.4,1.4,0,0,0-2-.7l-.4.2-.4-.3L6,27.1V25.5H7.5a1.5,1.5,0,0,0,0-3H6V20.9l3.5-2.8.4-.3.4.2.7.2a1.4,1.4,0,0,0,1.3-.9,1.5,1.5,0,0,0-.6-2L11,15h0V9.5l6.6-3.1,4.2,2.8.7.5V22.5H21a1.5,1.5,0,0,0,0,3Z"></path><path d="M13.9,9.9a1.8,1.8,0,0,0,0,2.2l2.6,2.5v2.8l-4,4v5.2l4,4v2.8l-2.6,2.5a1.8,1.8,0,0,0,0,2.2,1.5,1.5,0,0,0,1.1.4,1.5,1.5,0,0,0,1.1-.4l3.4-3.5V29.4l-4-4V22.6l4-4V13.4L16.1,9.9A1.8,1.8,0,0,0,13.9,9.9Z"></path><path d="M31.5,14.6l2.6-2.5a1.8,1.8,0,0,0,0-2.2,1.8,1.8,0,0,0-2.2,0l-3.4,3.5v5.2l4,4v2.8l-4,4v5.2l3.4,3.5a1.7,1.7,0,0,0,2.2,0,1.8,1.8,0,0,0,0-2.2l-2.6-2.5V30.6l4-4V21.4l-4-4Z"></path></g></symbol>
+    <symbol id="icon-systems" viewBox="0 0 24 24"><path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" fill="#000000"></path></symbol>
+    <symbol id="icon-dataeng" viewBox="0 0 24 24"><path d="M18 12V17C18 18.6569 15.3137 20 12 20C8.68629 20 6 18.6569 6 17V12M18 12V7M18 12C18 13.6569 15.3137 15 12 15C8.68629 15 6 13.6569 6 12M18 7C18 5.34315 15.3137 4 12 4C8.68629 4 6 5.34315 6 7M18 7C18 8.65685 15.3137 10 12 10C8.68629 10 6 8.65685 6 7M6 12V7" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+    <symbol id="icon-devops" viewBox="0 0 32 32"><path d="M18,31.36h-4c-0.128,0-0.248-0.069-0.312-0.181l-2-3.464c-0.064-0.111-0.064-0.248,0-0.359l2-3.464 c0.064-0.111,0.183-0.181,0.312-0.181h3.792l2.896-5.016c0.1-0.174,0.32-0.231,0.491-0.132c0.173,0.1,0.231,0.319,0.132,0.491 l-2.896,5.017l1.896,3.284c0.064,0.111,0.064,0.248,0,0.359l-2,3.464C18.247,31.291,18.129,31.36,18,31.36z M14.208,30.64h3.584 l1.792-3.104l-1.792-3.104h-3.584l-1.792,3.104L14.208,30.64z M28,25.593h-4c-0.129,0-0.247-0.069-0.312-0.181l-2-3.465 c-0.064-0.111-0.064-0.248,0-0.359l1.896-3.284l-2.896-5.016c-0.1-0.172-0.041-0.393,0.132-0.492c0.171-0.1,0.392-0.041,0.491,0.131 l2.896,5.016H28c0.129,0,0.247,0.069,0.312,0.181l2,3.464c0.064,0.111,0.064,0.248,0,0.359l-2,3.465 C28.247,25.523,28.129,25.593,28,25.593z M24.208,24.872h3.584l1.792-3.104l-1.792-3.104h-3.584l-1.792,3.104L24.208,24.872z M8,25.593H4c-0.128,0-0.248-0.069-0.312-0.181l-2-3.465c-0.064-0.111-0.064-0.248,0-0.359l2-3.464 C3.752,18.013,3.872,17.943,4,17.943h4c0.128,0,0.248,0.069,0.312,0.181l1.896,3.283H16c0.199,0,0.36,0.161,0.36,0.36 s-0.161,0.36-0.36,0.36h-5.792l-1.896,3.284C8.248,25.523,8.128,25.593,8,25.593z M4.208,24.872h3.584l1.792-3.104l-1.792-3.104 H4.208l-1.792,3.104L4.208,24.872z M11,19.253c-0.125,0-0.246-0.064-0.312-0.181l-2.896-5.016H4c-0.128,0-0.248-0.068-0.312-0.18 l-2-3.464c-0.064-0.111-0.064-0.249,0-0.36l2-3.464C3.752,6.477,3.872,6.408,4,6.408h4c0.128,0,0.248,0.068,0.312,0.18l2,3.464 c0.064,0.111,0.064,0.249,0,0.36l-1.896,3.284l2.896,5.017c0.099,0.172,0.04,0.392-0.132,0.491 C11.124,19.237,11.062,19.253,11,19.253z M4.208,13.336h3.584l1.792-3.104L7.792,7.128H4.208l-1.792,3.104L4.208,13.336z M28,14.056 h-4c-0.129,0-0.247-0.068-0.312-0.18l-1.896-3.285H16c-0.199,0-0.36-0.161-0.36-0.36s0.161-0.36,0.36-0.36h5.792l1.896-3.284 c0.064-0.111,0.183-0.18,0.312-0.18h4c0.129,0,0.247,0.068,0.312,0.18l2,3.464c0.064,0.111,0.064,0.249,0,0.36l-2,3.464 C28.247,13.988,28.129,14.056,28,14.056z M24.208,13.336h3.584l1.792-3.104l-1.792-3.104h-3.584l-1.792,3.104L24.208,13.336z M11,13.484c-0.061,0-0.123-0.015-0.18-0.048c-0.172-0.1-0.231-0.32-0.132-0.492l2.896-5.016l-1.896-3.284 c-0.064-0.112-0.064-0.249,0-0.36l2-3.464C13.752,0.708,13.872,0.64,14,0.64h4c0.129,0,0.247,0.068,0.312,0.18l2,3.464 c0.064,0.111,0.064,0.249,0,0.36l-2,3.464C18.247,8.22,18.129,8.288,18,8.288h-3.792l-2.896,5.017 C11.245,13.42,11.124,13.484,11,13.484z M14.208,7.568h3.584l1.792-3.104L17.792,1.36h-3.584l-1.792,3.104L14.208,7.568z" fill="#000000" stroke="#000000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24"><path d="M4.0744 2.9938C4.13263 1.96371 4.37869 1.51577 5.08432 1.15606C5.84357 0.768899 7.04106 0.949072 8.45014 1.66261C9.05706 1.97009 9.11886 1.97635 10.1825 1.83998C11.5963 1.65865 13.4164 1.65929 14.7213 1.84164C15.7081 1.97954 15.7729 1.97265 16.3813 1.66453C18.3814 0.651679 19.9605 0.71795 20.5323 1.8387C20.8177 2.39812 20.8707 3.84971 20.6494 5.04695C20.5267 5.71069 20.5397 5.79356 20.8353 6.22912C22.915 9.29385 21.4165 14.2616 17.8528 16.1155C17.5801 16.2574 17.3503 16.3452 17.163 16.4167C16.5879 16.6363 16.4133 16.703 16.6247 17.7138C16.7265 18.2 16.8491 19.4088 16.8973 20.4002C16.9844 22.1922 16.9831 22.2047 16.6688 22.5703C16.241 23.0676 15.6244 23.076 15.2066 22.5902C14.9341 22.2734 14.9075 22.1238 14.9075 20.9015C14.9075 19.0952 14.7095 17.8946 14.2417 16.8658C13.6854 15.6415 14.0978 15.185 15.37 14.9114C17.1383 14.531 18.5194 13.4397 19.2892 11.8146C20.0211 10.2698 20.1314 8.13501 18.8082 6.83668C18.4319 6.3895 18.4057 5.98446 18.6744 4.76309C18.7748 4.3066 18.859 3.71768 18.8615 3.45425C18.8653 3.03823 18.8274 2.97541 18.5719 2.97541C18.4102 2.97541 17.7924 3.21062 17.1992 3.49805L16.2524 3.95695C16.1663 3.99866 16.07 4.0147 15.975 4.0038C13.5675 3.72746 11.2799 3.72319 8.86062 4.00488C8.76526 4.01598 8.66853 3.99994 8.58215 3.95802L7.63585 3.49882C7.04259 3.21087 6.42482 2.97541 6.26317 2.97541C5.88941 2.97541 5.88379 3.25135 6.22447 4.89078C6.43258 5.89203 6.57262 6.11513 5.97101 6.91572C5.06925 8.11576 4.844 9.60592 5.32757 11.1716C5.93704 13.1446 7.4295 14.4775 9.52773 14.9222C10.7926 15.1903 11.1232 15.5401 10.6402 16.9905C10.26 18.1319 10.0196 18.4261 9.46707 18.4261C8.72365 18.4261 8.25796 17.7821 8.51424 17.1082C8.62712 16.8112 8.59354 16.7795 7.89711 16.5255C5.77117 15.7504 4.14514 14.0131 3.40172 11.7223C2.82711 9.95184 3.07994 7.64739 4.00175 6.25453C4.31561 5.78028 4.32047 5.74006 4.174 4.83217C4.09113 4.31822 4.04631 3.49103 4.0744 2.9938Z" fill="#0F0F0F"/><path d="M3.33203 15.9454C3.02568 15.4859 2.40481 15.3617 1.94528 15.6681C1.48576 15.9744 1.36158 16.5953 1.66793 17.0548C1.8941 17.3941 2.16467 17.6728 2.39444 17.9025C2.4368 17.9449 2.47796 17.9858 2.51815 18.0257C2.71062 18.2169 2.88056 18.3857 3.05124 18.5861C3.42875 19.0292 3.80536 19.626 4.0194 20.6962C4.11474 21.1729 4.45739 21.4297 4.64725 21.5419C4.85315 21.6635 5.07812 21.7352 5.26325 21.7819C5.64196 21.8774 6.10169 21.927 6.53799 21.9559C7.01695 21.9877 7.53592 21.998 7.99999 22.0008C8.00033 22.5527 8.44791 23.0001 8.99998 23.0001C9.55227 23.0001 9.99998 22.5524 9.99998 22.0001V21.0001C9.99998 20.4478 9.55227 20.0001 8.99998 20.0001C8.90571 20.0001 8.80372 20.0004 8.69569 20.0008C8.10883 20.0026 7.34388 20.0049 6.67018 19.9603C6.34531 19.9388 6.07825 19.9083 5.88241 19.871C5.58083 18.6871 5.09362 17.8994 4.57373 17.2891C4.34391 17.0194 4.10593 16.7834 3.91236 16.5914C3.87612 16.5555 3.84144 16.5211 3.80865 16.4883C3.5853 16.265 3.4392 16.1062 3.33203 15.9454Z" fill="#0F0F0F"/></symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M6.5 8C7.32843 8 8 7.32843 8 6.5C8 5.67157 7.32843 5 6.5 5C5.67157 5 5 5.67157 5 6.5C5 7.32843 5.67157 8 6.5 8Z" fill="#0F0F0F"/><path d="M5 10C5 9.44772 5.44772 9 6 9H7C7.55228 9 8 9.44771 8 10V18C8 18.5523 7.55228 19 7 19H6C5.44772 19 5 18.5523 5 18V10Z" fill="#0F0F0F"/><path d="M11 19H12C12.5523 19 13 18.5523 13 18V13.5C13 12 16 11 16 13V18.0004C16 18.5527 16.4477 19 17 19H18C18.5523 19 19 18.5523 19 18V12C19 10 17.5 9 15.5 9C13.5 9 13 10.5 13 10.5V10C13 9.44771 12.5523 9 12 9H11C10.4477 9 10 9.44772 10 10V18C10 18.5523 10.4477 19 11 19Z" fill="#0F0F0F"/><path fill-rule="evenodd" clip-rule="evenodd" d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z" fill="#0F0F0F"/></symbol>
+    <symbol id="icon-resume" viewBox="0 0 24 24"><path d="M12,11A5,5,0,1,0,7,6,5.006,5.006,0,0,0,12,11Zm0-8A3,3,0,1,1,9,6,3,3,0,0,1,12,3ZM3,22V18a5.006,5.006,0,0,1,5-5h8a5.006,5.006,0,0,1,5,5v4a1,1,0,0,1-2,0V18a3,3,0,0,0-3-3H8a3,3,0,0,0-3,3v4a1,1,0,0,1-2,0Z" stroke="#000000" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+    <symbol id="icon-new-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+    </symbol>
+</svg>

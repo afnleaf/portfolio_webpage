@@ -120,17 +120,51 @@
         }
 
         .hero h2 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 400;
+            max-width: 55rem;
             margin-bottom: 1.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
         }
 
         .hero p {
             font-size: 1.2rem;
             line-height: 1.6;
-            max-width: 50rem;
+            max-width: 45rem;
             margin: 0 auto;
             color: var(--off-black);
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            min-height: 10rem;
+        }
+
+        .profile img {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            border: 3px solid var(--green);
+            object-fit: cover;
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile img:hover {
+            transform: scale(1.05);
+        }
+        
+        .profile h1 {
+            margin: 0;
+            max-width: 20rem;
+            text-align: center;
         }
 
         /* skills */
@@ -272,6 +306,17 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             color: var(--white);
             background-color: var(--green);
+        }
+
+        /* about */
+
+        #about p {
+            text-indent: 3em;
+            justify-content: center;
+            color: var(--off-black);
+            max-width: 50rem;
+            margin: 1rem auto;
+            line-height: 1.6;
         }
 
         /* contact */
@@ -451,13 +496,17 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <section id="home" class="hero">
-                <h1>Stefan Zupancic</h1>
+                <div class="profile">
+                    <h1>Stefan Zupancic</h1>
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQHV6TzTKoGu2g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712520777893?e=1757548800&v=beta&t=y2WRMUYhla2zKFbEL6rOzHT7ZuNvfsCvZH3NAXQkvjU">
+                </div>
                 <h2 class="section-title">A polyglot software developer who architects performant, end-to-end systems from zero to one.</h2>
                 <p>I have a proven track record of building, and then shipping products to real users, driving engagement and solving complex problems with elegant, efficient code.</p>
 
@@ -635,9 +684,13 @@
                 </div>
             </section>
             
+            <section id="about">
+                <h2 class="section-title">About</h2>
+                <p>After graduating, I found the entry-level market wasn't offering the kind of architectural challenges I was looking for. So, I chose a different path. For the past two years, I have focused on building and deploying a series of production-grade systems to demonstrate and hone my skills in AI, data engineering, and high-performance applications all while supporting myself with part time work.</p>
+                <p>The projects showcased here are the result of that focus. They are tangible examples of my engineering philosophy: solving problems from first principles. My process begins by identifying a fundamental challenge, analyzing its core tensions, and architecting a complete, optimized system to resolve them. I am a polyglot engineer who chooses the right tool for the job. From low-level C and Rust for data-intensive pipelines to high-level Python and JavaScript for AI and web services. I am unafraid to master new technologies when they are the best fit for the problem at hand.</p>
+                <p>I take an engineering approach to automation and am unafraid to optimize down to the bit level to achieve elegant, performant, and resilient systems. For me, technology is a medium for exploring and implementing complex ideas. This philosophy drives my approach: not just full-stack development, but end-to-end system ownership, from initial conceptual design to the final, self-hosted deployment of every project.</p>                                   </section>
 
             <!--
-            <section id="about">
                 systems architect
                 pragmatic problem solving
                 philosophical
@@ -648,22 +701,7 @@
                 applied AI/ML
                 robust automation (99%)
                 polyglot
-
-                using technology as a medium for exploring and implementing complex ideas
-                not just frontend and backend but conceptual system design to full self hosted deployment of every single one of my projects
-
-                I am unafraid to get into the nitty gritty and optimize down the the very bits used and how their shape affects cache and so on.
-
-                I take an engineering approach to automation, not acceptingthe fault tolerances in modern LLM based pipelines.
-
-                Ability to learn on the go combined with using the right tool for the job. Unafraid to research what that might be if I don't know.
-
-                identify a fundamental problem, analyze it from first principles, and construct a complete, optimized, and elegant system to solve it.
-                
-            </section>
             -->
-            
-            
 
 
             <section id="contact">

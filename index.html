@@ -4,12 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>stezup.dev</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Portfolio of Stefan Zupancic, a polyglot software developer specializing in systems design, full-stack development, AI automation, and 3D data visualization.">
+    <meta name="keywords" content="afnleaf, Stefan Zupancic, portfolio, software developer, full-stack developer, system design, data visualization, AI automation, data pipeline, DevOps, Go, Rust, Python, JavaScript, TypeScript, C, Three.js, Elysia.js, Bun, PyTorch, OpenCV, Docker, PostgreSQL, browser extension, CI/CD, data processing, 3D graphics, VLM, OCR, game development tools, webhooks, containerization">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <!-- CSS here instead of stylesheet -->
     <style>
+
+        :root {
+            --white: #ffffff;
+            --green: #2f7e39;
+            --olive: #769a75;
+            --mint:  #f0fdf0;
+            --beige: #f6edd9;
+            --that-subtle-offwhite-colouring: #fefefe;
+            --off-black: #222222;
+            --max-width: 80rem;
+
+        }
 
         html {
             scroll-behavior: smooth;
@@ -18,7 +30,8 @@
         body {
             margin: 0;
             padding-top: 4rem;
-            font-family: "Trebuchet MS"
+            font-family: "Trebuchet MS";
+            background-color: var(--that-subtle-offwhite-colouring);
         }
 
         header {
@@ -29,14 +42,14 @@
             right: 0;
             z-index: 1000;
             padding: 0 5%;
-            backdrop-filter: blur(1rem);
+            backdrop-filter: blur(0.5rem);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 80rem;
+            max-width: var(--max-width);
             margin: 0 auto;
             height: 2.2rem;
         }
@@ -52,15 +65,23 @@
         nav a {
             text-decoration: none;
             font-weight: 700;
-            transition: color 0.3s ease;
+            font-size: 1.1rem;
+            transition: color 0.2s ease;
+            color: var(--green);
         }
 
         nav a:hover {
             color: black;
         }
 
+        .logo {
+            width: 1.9rem;
+            height: auto;
+            display: flex;
+        }
+
         main {
-            max-width: 80rem;
+            max-width: var(--max-width);
             margin: 0 auto;
             padding: 2rem 5% 2rem 5%;
             transition: padding 0.3s ease-in-out;
@@ -109,6 +130,7 @@
             line-height: 1.6;
             max-width: 50rem;
             margin: 0 auto;
+            color: var(--off-black);
         }
 
         /* skills */
@@ -137,18 +159,19 @@
         .skill-card svg {
             width: 3rem;
             height: 3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0rem;
         }
 
         .skill-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .skill-card p {
             font-size: 1rem;
             line-height: 1;
             margin: 0 auto;
+            color: var(--off-black);
         }
 
         /* projects */
@@ -199,6 +222,7 @@
         .project-content p {
             line-height: 1.6;
             flex-grow: 1;
+            color: var(--off-black);
         }
 
         .tech-tags {
@@ -212,9 +236,11 @@
         .tech-tags span {
             padding: 0.25rem 0.75rem;
             border-radius: 0.75rem;
-            border: 1px solid;
+            border: 1px solid black;
             font-size: 0.8rem;
             font-family: monospace;
+            background-color: var(--olive);
+            color: var(--white);
         }
 
         .project-links {
@@ -234,11 +260,18 @@
             font-weight: 600;
             text-align: center;
             justify-content: center;
+            color: var(--green);
+            background-color: var(--mint);
+            transition: color 0.2s ease, 
+                background-color 0.2s ease, 
+                transform 0.2s ease, 
+                box-shadow 0.2s ease;
         }
         
         .project-links a:hover {
-            transform: translateY(-0.1rem);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            color: var(--white);
+            background-color: var(--green);
         }
 
         /* contact */
@@ -310,7 +343,6 @@
 
 
         /* iframe */
-
         #iframe-overlay {
             display: none;
             position: fixed;
@@ -343,7 +375,6 @@
             opacity: 0;
             transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
-
         
         #iframe-overlay.visible {
             display: block;
@@ -394,23 +425,29 @@
             color: #fff;
             opacity: 0.7;
             transition: opacity 0.2s;
-            padding: 0.25rem; /* Add padding for easier clicking */
-            line-height: 0; /* Helps align the SVG */
+            padding: 0.25rem;
+            line-height: 0;
         }
+
         #open-in-new-tab-btn:hover {
             opacity: 1;
         }
+
         #open-in-new-tab-btn svg {
             width: 20px;
             height: 20px;
-            stroke: #fff; /* Make sure the icon is white */
+            stroke: #fff;
         }
     </style>
 </head>
     <body>
         <header>
             <nav>
-                <div class="logo">logo</div>
+                <div class="logo">
+                    <a href="#" >
+                        <img src="assets/favicon.ico" class="logo">
+                    </a>    
+                </div>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#projects">Projects</a></li>
@@ -429,12 +466,12 @@
                     <div class="skill-card">
                         <svg class="skill-icon" aria-hidden="true" focusable="false"><use href="#icon-systems"></use></svg>
                         <h3>System Design</h3>
-                        <p>text goes here</p>
+                        <p>Engineering elegant and performant systems by resolving core architectural trade-offs.</p>
                     </div>
                     <div class="skill-card">
                         <svg class="skill-icon" aria-hidden="true" focusable="false"><use href="#icon-full-stack"></use></svg>
                         <h3>Full-Stack Development</h3>
-                        <p>text goes here</p>
+                        <p>Developing across the stack, from custom frontends to high-performance backend APIs.</p>
                     </div>
                     <div class="skill-card">
                         <svg class="skill-icon" aria-hidden="true" focusable="false"><use href="#icon-3d"></use></svg>
@@ -448,7 +485,7 @@
                     </div>
                     <div class="skill-card">
                         <svg class="skill-icon" aria-hidden="true" focusable="false"><use href="#icon-dataeng"></use></svg>
-                        <h3>Data Pipeline Engineering</h3>
+                        <h3>Data Pipelines</h3>
                         <p>Building efficient and reliable ETL/ELT pipelines for large-scale data processing.</p>
                     </div>
                     <div class="skill-card">
@@ -570,7 +607,7 @@
                                 <span>Linux</span>
                             </div>
                             <div class="project-links">
-                                <a target="_blank" href="">demo</a>
+                                <!--<a target="_blank" href="">demo</a>-->
                                 <a target="_blank" href="https://github.com/afnleaf/deadlocktopmatch">repo</a>
                             </div>
                         </div>
@@ -598,6 +635,37 @@
                 </div>
             </section>
             
+
+            <!--
+            <section id="about">
+                systems architect
+                pragmatic problem solving
+                philosophical
+                dialectics
+                first-principles
+                optimizer
+                end-to-end
+                applied AI/ML
+                robust automation (99%)
+                polyglot
+
+                using technology as a medium for exploring and implementing complex ideas
+                not just frontend and backend but conceptual system design to full self hosted deployment of every single one of my projects
+
+                I am unafraid to get into the nitty gritty and optimize down the the very bits used and how their shape affects cache and so on.
+
+                I take an engineering approach to automation, not acceptingthe fault tolerances in modern LLM based pipelines.
+
+                Ability to learn on the go combined with using the right tool for the job. Unafraid to research what that might be if I don't know.
+
+                identify a fundamental problem, analyze it from first principles, and construct a complete, optimized, and elegant system to solve it.
+                
+            </section>
+            -->
+            
+            
+
+
             <section id="contact">
                 <h2 class="section-title">Contact</h2>
                 <p>Have a question or want to work together? Feel free to reach out.</p>
@@ -616,6 +684,8 @@
                     </a>
                 </div>
             </section>
+
+
         </main>
 
         <footer>

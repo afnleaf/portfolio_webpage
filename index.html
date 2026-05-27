@@ -576,31 +576,67 @@
                 <h2 class="section-title">Projects</h2>
                 
                 <div class="project-grid">
-                
-                    <!-- pokepastefix/hqmons-->
+
+                      <!-- histos-->
                     <div class="project-card">
-                        <img src="https://raw.githubusercontent.com/afnleaf/pokepastefix/main/pokepastefixdemo.gif" alt="pokepastefix" title="pokepastefix" style="object-position: left top;">
+                        <img src="https://peggyosterkamp.com/wp-content/uploads/2014/05/Greek-Loom-Drawing.gif.jpg" alt="histos" title="histos" style="object-position: left top;">
                         <div class="project-content">
-                            <h3>Pokepastefix & HQmons</h3>
-                            <p>A client-server solution to fix and enhance missing functionality of the <a href="https://pokepast.es">pokepast.es</a> website. The browser extension replaces missing images using dynamic inline resource insertion, while the art is served by a custom Bun and Elysia.js backend. The extension serves over 800 daily active users, with the API handling 10k+ monthly requests.</p>
+                            <h3>Histos</h3>
+                            <p>A tool for agents and engineers to weave webapp assets into a self-contained html file. Specifically designed with WASM in mind, binaries get brotli-compressed, base64-encoded and stored in <code>pre</code> tags. Modern AI agents have a difficult time editing massive single files, a modularized approach is superior. Histos unlocks the best of both worlds. This tool is used to build my Mecha game, Paleomap3D and the hockey visualization.</p>
                             <div class="tech-tags">
-                                <span>JavaScript</span>
-                                <span>TypeScript</span>
-                                <span>Bun</span>
-                                <span>Elysia.js</span>
-                                <span>Docker</span>
-                                <span>Browser Extension</span>
-                                <span>HTML/CSS</span>
+                                <span>Rust</span>
+                                <span>Javascript</span>
                             </div>
                             <div class="project-links">
-                                <a target="_blank" href="https://github.com/afnleaf/pokepastefix">extension repo</a>
-                                <a target="_blank" href="https://chromewebstore.google.com/detail/pokepastefix/ekceaboabpgkgbpigacngnjagcdhdkmn">chrome webstore</a>
-                                <a target="_blank" href="https://github.com/afnleaf/hqmons">server repo</a>
-                                <a target="_blank" href="https://chiy.uk">chiy.uk</a>
+                                <a target="_blank" href="https://github.com/chetgdp/histos">repo</a>
+                                <a target="_blank" href="https://crates.io/crates/histos">crates.io</a>
                             </div>
                         </div>
                     </div>
-                
+
+
+
+                    <!-- giverny -->
+                    <div class="project-card">
+                        <img src="https://raw.githubusercontent.com/chetgdp/giverny/main/assets/giverny_bridge.jpg" alt="giverny" title="giverny" style="object-position: left top;">
+                        <div class="project-content">
+                            <h3>Giverny</h3>
+                            <p>A composable agentic shell that dissolves an agent harness into your terminal. Invoke an LLM as a first-class shell program via a single-character alias (<code>? do thing</code>) that pipes, chains, and redirects like any Unix tool. Giverny was built around the core insight that the shell <em>is</em> the agent harness, so it skips bespoke JSON tool schemas in favor of the native commands a model is pre-trained on.</p>
+                            <!-- A multi-backend bridge wraps <code>claude -p</code> (or any local/remote model) into both an interactive shell and an OpenAI-compatible server, with streaming, sessions, and a permission gate.-->
+                            <div class="tech-tags">
+                                <span>Typescript</span>
+                                <span>Bun</span>
+                                <span>Claude Code</span>
+                                <span>OpenAI Completions/Responses</span>
+                                <span>NDJSON</span>
+                                <span>CLI/TUI</span>
+                            </div>
+                            <div class="project-links">
+                                <a target="_blank" href="https://github.com/chetgdp/giverny">repo</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Mecha -->
+                    <div class="project-card">
+                        <img src="https://raw.githubusercontent.com/afnleaf/mecha/refs/heads/main/screentshot1.png" alt="Mecha" title="Mecha" style="object-position: left top;">
+                        <div class="project-content">
+                            <h3>Early Stage Mecha Game</h3>
+                            <p>A work in progress, meant to be a endless arena mode to test and iterate upon game mechanics before applying assets such as game art and sounds. Packs down to a single 300kb file using Histos. Built using C and Raylib using a "big struct" style of code.</p>
+                            <div class="tech-tags">
+                                <span>C</span>
+                                <span>Raylib</span>
+                            </div>
+                            <div class="project-links">
+                                <a target="_blank" href="https://github.com/afnleaf/mecha">repo</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                     <!-- paleomap3D -->
                     <div class="project-card" data-url="https://paleomap3d.org">
                         <img src="https://raw.githubusercontent.com/afnleaf/paleomap3D/refs/heads/main/southamericaafrica.gif" alt="paleomap3D" title="paleomap3D">
@@ -627,6 +663,34 @@
                         </div>
                     </div>
                     
+
+
+                    <!-- pokepastefix/hqmons-->
+                    <div class="project-card">
+                        <img src="https://raw.githubusercontent.com/afnleaf/pokepastefix/main/pokepastefixdemo.gif" alt="pokepastefix" title="pokepastefix" style="object-position: left top;">
+                        <div class="project-content">
+                            <h3>Pokepastefix & HQmons</h3>
+                            <p>A client-server solution to fix and enhance missing functionality of the <a href="https://pokepast.es">pokepast.es</a> website. The browser extension replaces missing images using dynamic inline resource insertion, while the art is served by a custom Bun and Elysia.js backend. The extension serves over 800 daily active users, with the API handling 10k+ monthly requests.</p>
+                            <div class="tech-tags">
+                                <span>JavaScript</span>
+                                <span>TypeScript</span>
+                                <span>Bun</span>
+                                <span>Elysia.js</span>
+                                <span>Docker</span>
+                                <span>Browser Extension</span>
+                                <span>HTML/CSS</span>
+                            </div>
+                            <div class="project-links">
+                                <a target="_blank" href="https://github.com/afnleaf/pokepastefix">extension repo</a>
+                                <a target="_blank" href="https://chromewebstore.google.com/detail/pokepastefix/ekceaboabpgkgbpigacngnjagcdhdkmn">chrome webstore</a>
+                                <a target="_blank" href="https://github.com/afnleaf/hqmons">server repo</a>
+                                <a target="_blank" href="https://chiy.uk">chiy.uk</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
                     <!-- OW2 Replaycode -->
                     <div class="project-card">
                         <img src="https://raw.githubusercontent.com/afnleaf/ow2-replaycode-ocr/refs/heads/main/ow2replaycodedemo.gif" alt="ow2-replaycode-ocr" title="ow2-replaycode-ocr">
@@ -648,6 +712,8 @@
                         </div>
                     </div>
                 
+
+
                     <!-- deadlocker.tv -->
                     <div class="project-card" data-url="https://deadlocker.tv/map">
                         <img src="https://raw.githubusercontent.com/afnleaf/deadlocker.tv/refs/heads/main/deadlockertv_map.png" alt="deadlocker.tv" title="deadlocker.tv">
@@ -670,9 +736,11 @@
                         </div>
                     </div>
                     
+
+
                     <!-- deadlocktopmatch --> 
                     <div class="project-card">
-                        <img src="https://admin.esports.gg/wp-content/uploads/2024/08/deadlock-strategy.jpg" alt="deadlocktopmatch" title="deadlocktopmatch">
+                        <img src="https://static0.polygonimages.com/wordpress/wp-content/uploads/2024/11/Deadlock-01.jpg" alt="deadlocktopmatch" title="deadlocktopmatch">
                         <div class="project-content">
                             <h3>Deadlock Broadcast Agent</h3>
                             <p>An autonomous agent that automates the broadcasting of top-tier matches for the game Deadlock. The agent uses OpenCV in Python for real-time game state analysis, simply following the top networth player perspective. It leverages automation libraries to control the game client on a Linux environment and integrates with streaming software via Shell Scripting, enabling a fully automated, 24/7 broadcast.</p>
@@ -689,6 +757,8 @@
                         </div>
                     </div>
                     
+
+
                     <!-- hockey3d --> 
                     <div class="project-card" data-url="https://stezup.dev/hokej">
                         <img src="https://raw.githubusercontent.com/afnleaf/hockey3d/refs/heads/main/hockey3ddemo.png" alt="hockey3d" title="hockey3d">
@@ -710,7 +780,7 @@
 
                 </div>
             </section>
-            
+
             <section id="about">
                 <h2 class="section-title">About</h2>
                 <div class="about-card">
@@ -759,7 +829,7 @@
         </main>
 
         <footer>
-            © 2025 Stefan Zupancic. All projects are open source.
+            © 2026 Stefan Zupancic. All projects are open source.
         </footer>
 
 

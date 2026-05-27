@@ -1,6 +1,9 @@
 /*<!-- CSS here instead of stylesheet -->
 <style> */
 :root {
+    --max-width: 80rem;
+    --max-width-header: 30rem;
+
     /* color palette - light */
     --white: #ffffff;
     --black: #000000;
@@ -10,7 +13,6 @@
     --beige: #f6edd9;
     --that-subtle-offwhite-colouring: #fefefe;
     --off-black: #222222;
-    --max-width: 80rem;
 
     /* color palette - dark */
     --brown-black:      #15120c;
@@ -77,22 +79,26 @@ body {
 
 header {
     position: fixed;
-    border-bottom: 1px solid var(--border-color);
-    top: 0;
-    left: 0;
-    right: 0;
+    //border-bottom: 1px solid var(--border-color);
+    top: 0.4rem;
+    left: 0.4rem;
+    right: 0.4rem;
     z-index: 1000;
-    padding: 0 5%;
-    backdrop-filter: blur(0.5rem);
+    //padding: 0 5%;
 }
 
 nav {
     display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 0 1.2rem;
     justify-content: space-between;
     align-items: center;
-    max-width: var(--max-width);
+    max-width: var(--max-width-header);
     margin: 0 auto;
-    height: 2.2rem;
+    height: 2.4rem;
+    backdrop-filter: blur(0.5rem);
+    box-shadow: 0 0.4rem 1.2rem rgba(0,0,0,0.15);
 }
 
 nav ul {
@@ -186,6 +192,7 @@ h2.section-title {
     max-width: 45rem;
     margin: 1.4rem auto;
     color: var(--accent);
+    white-space: pre-wrap;
 }
 
 .profile {

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+     fill="none" stroke="currentColor" stroke-width="2.8"
+     stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="code logo">
+  <path d="M17.25 6.75 22.5 12l-5.25 5.25" />
+  <path d="M6.75 6.75 1.5 12l5.25 5.25" />
+  <path d="M14.25 3.75 9.75 20.25" />
+</svg>
